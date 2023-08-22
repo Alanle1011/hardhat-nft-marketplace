@@ -7,8 +7,6 @@ require("hardhat-gas-reporter");
 require("hardhat-contract-sizer");
 require("dotenv").config();
 
-
-
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x";
@@ -22,6 +20,9 @@ module.exports = {
     hardhat: {
       chainId: 31337,
       // gasPrice: 130000000000,
+    },
+    localhost: {
+      chainId: 31337,
     },
     sepolia: {
       url: SEPOLIA_RPC_URL,
@@ -48,6 +49,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,
+    customChains: [],
   },
   gasReporter: {
     enabled: true,
